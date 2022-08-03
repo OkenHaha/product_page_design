@@ -177,40 +177,6 @@ button i{
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
-/*
-
-        modal.innerHTML += `
-          <div class="modal-content">
-          <span class="close-button" onclick="toggleModal()">×</span>
-          <div class="modal_container">
-            <div class="product_image">
-              <img src="${data[i].image}">
-            </div>
-            <div class="product_details">
-              <h1 class="title">${data[i].title}</h1>
-              <p class="pro_desc">${data[i].desc}</p>
-              <p class="sub_price">Price: <em>${data[i].price}$</em></p>
-              <label for="cars" class="list">Choose a car:</label>
-          <select name="cars" id="cars" style="height: 20px;">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
-
-              <button>Buy Now</button>
-              <button>Add to Cart <i class="fa fa-shopping-cart"></i></button>
-            </div>
-          </div>
-      </div>
-        `;
-*/
-
-
-
-
-
-
 
 
 /*   Code for products and responsive layout   */
