@@ -1,0 +1,44 @@
+[
+	{	"id":1,
+		"title": "Translation",
+		"desc": "We provide top-notch translation service to provide a seamless and accurate translation in any field. Our translators are highly qualified, trained and skilled in making your business more efficient.",
+		"image":"https://media.istockphoto.com/vectors/translator-blue-rgb-color-icon-foreign-language-freelance-interpreter-vector-id1251722943?k=20&m=1251722943&s=612x612&w=0&h=eWBcmwbOTU0GuXp4Wq4MOyJ4gazRQA9IgjXXSBsnz0s=",
+		"price":"2.30",
+		"amount":"per 100 words"
+	},
+	{	"id":2,
+		"title": "Transcription",
+		"desc": " Our transcription services are designed to help you get to the essence of your message. We provide top-quality transcripts that are accurate and written in a style which is easy to understand and consistent with your brand. Our careful review process ensures that transcripts meet our strict quality standards.",
+		"image":"https://media.istockphoto.com/vectors/transcription-blue-concept-icon-audio-files-conversion-into-text-vector-id1216168500?k=20&m=1216168500&s=612x612&w=0&h=2d5WTvE_dKX0tHYD6D-3RAOjYFe-3Wm8m9oGcF7lDF4=",
+		"price":"3.50",
+		"amount":"per minute"
+	},
+	{	"id":3,
+		"title": "Text-Writing",
+		"desc": " Text writing is the most requested type of writing by various customers. With our excellent typist and profession in writing, you can be sure to expect good quality text writing formats.",
+		"image":"https://media.istockphoto.com/vectors/journalist-at-workplace-writing-article-or-post-sitting-on-table-cup-vector-id1287011853?k=20&m=1287011853&s=612x612&w=0&h=VlsmH1I0j2TUDDauqGS_6Qlc64zy106eYY-jD17i8l4=",
+		"price":"3.40",
+		"amount":"per 100 words"
+	},
+	{	"id":4,
+		"title": "Minecraft Plugins",
+		"desc": " Plugins offer a way to customize Minecraft. Our plugins allow you to extend the game in all kinds of ways, from simple changes like adding new structures or mobs to more advanced features like scripting and power transformations.",
+		"image":"https://media.istockphoto.com/vectors/pixel-minecraft-style-land-background-concept-of-game-ground-with-vector-id1305302109",
+		"price":"0.50",
+		"amount": "per command"
+	},
+	{	"id":5,
+		"title": "Video-Editing",
+		"desc": " Our video editing team will transform your film clips into a polished, professionally edited video that you can use to promote yourself or your business.",
+		"image":"https://media.istockphoto.com/vectors/video-editor-concept-multimedia-content-production-and-footage-web-vector-id1285751498?s=612x612",
+		"price":"2.25",
+		"amount":"per minute"
+	},
+	{	"id":6,
+		"title": "GFX",
+		"desc": " As the most trusted graphic design agency in the world, we’re dedicated to crafting tailored designs for the digital world. From logo reworks and print collateral to applications and website design, we’ll craft a product that reflects your brand's unique voice, speaks to your target audience, and delivers bottom line results",
+		"image":"https://media.istockphoto.com/vectors/photo-editing-software-on-laptop-screen-vector-illustration-vector-id1329001630?k=20&m=1329001630&s=612x612&w=0&h=g6lv8DCAWzNlAj1PU-PvzWmvnqtE4soKMnYvK9VLvcc=",
+		"price":"5.00",
+		"amount":"per minute"
+	}
+]

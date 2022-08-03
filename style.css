@@ -1,0 +1,372 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+.show{
+  display: block;
+}
+li{
+  list-style-type: none;
+}
+.container{
+    width: 100%;
+    aspect-ratio: 100 / 29;
+}
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50%;
+  padding: 20px;
+  background-color: purple;
+  color: #fff;
+}
+.nav-links a{
+  color: #fff;
+}
+.logo{
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img{
+  width: 4vw;
+  height: 8vh;
+}
+.menu{
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+.icon{
+  display: none;
+  font-size: 24px;
+}
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: base;
+}
+.desc, button{
+  margin-top:5px;
+}
+button{
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 16px;
+  font-weight: medium;
+  background-color: #fff;
+  width: 100%;
+}
+button:hover{
+  content: "";
+  cursor: pointer;
+  background-color: purple;
+  color: #fff;
+  opacity: 0.8;
+  transition: .5s ease;
+}
+button i{
+  font-size: 16px;
+}
+.desc .title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.desc .sub{
+  font-weight: lighter;
+  opacity: .8;
+}
+
+.sub_price{
+  margin-top: 30px;
+}
+.list{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.list select{
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    margin-top: 45px;
+    width: calc(100% - 300px);
+    height: calc(100vh - 200px);
+    border-radius: 0.5rem;
+    overflow-y: hidden;
+}
+.modal_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+.product_image{
+  background: purple;
+  width: 50%;
+  height: calc(100vh - 240px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+}
+.product_image img{
+  width: 350px;
+  height: 300px;
+  overflow-y: hidden;
+}
+.product_details{
+  background: #eee;
+  width: 50%;
+  height: calc(100vh - 240px);
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+.product_details h1{
+  padding-bottom: 30px;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: purple;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/*
+
+        modal.innerHTML += `
+          <div class="modal-content">
+          <span class="close-button" onclick="toggleModal()">×</span>
+          <div class="modal_container">
+            <div class="product_image">
+              <img src="${data[i].image}">
+            </div>
+            <div class="product_details">
+              <h1 class="title">${data[i].title}</h1>
+              <p class="pro_desc">${data[i].desc}</p>
+              <p class="sub_price">Price: <em>${data[i].price}$</em></p>
+              <label for="cars" class="list">Choose a car:</label>
+          <select name="cars" id="cars" style="height: 20px;">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+
+              <button>Buy Now</button>
+              <button>Add to Cart <i class="fa fa-shopping-cart"></i></button>
+            </div>
+          </div>
+      </div>
+        `;
+*/
+
+
+
+
+
+
+
+
+/*   Code for products and responsive layout   */
+[class*="col-"] {
+  width: 100%;
+  flex-grow: 1;
+  flex-basis: 1;
+  display: block;
+}
+@media only screen and (max-width: 600px) {
+  .col-3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;    
+  }
+  .product{
+  width: 100vw;
+  margin-top: 10px;
+  }
+  img{
+    width: 100%;
+  }
+  .menu li{
+    width: 100%;
+    align-items: center;
+  }
+  .menu li a{
+    text-decoration: none;
+  }
+  .menu li a:hover{
+    cursor: pointer;
+    color: #000;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .col-3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+  }
+  .menu li a{
+    width: 100%;
+    align-items: center;
+    text-decoration: none;
+  }
+  .menu li a:hover{
+    cursor: pointer;
+    color: #000;
+  }
+  img{
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu{
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: 20px;
+    text-align: center;
+    padding: 16px 0;
+    background: purple;
+  }
+  .modal{
+    margin-top: 50px;
+    overflow-y: scroll;
+  }
+  .modal-content{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .modal_container{
+    display: flex;
+    flex-direction: column;
+  }
+  .product_image{
+    height: 100%;
+    width: 100%;
+  }
+  .product_image img{
+    width: 100%;
+    height: 100%;
+  }
+  .product_details{
+    height: 100%;
+    width: 100%;
+    background-color: #eee;
+  }
+  .close-button {
+    z-index: 5;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: #fff;
+    background-color: purple;
+  }
+  .menu li:hover{
+    display: inline-block;
+    transition: 0.3s ease;
+    color: #000;
+  }
+  .menu li + li{
+    margin-top: 12px;
+  }
+  .icon{
+    display: block;
+  }
+  .logo h1{
+    display: none
+  }
+  .logo img{
+    height: 50px;
+    width: 50px;
+  }  
+  .show{
+    display: block;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .col-3 {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+  .logo h1{
+    font-size: 28px;
+  }
+  img{
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .col-3 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  img{
+    height:35vh;
+    max-width: 100%;
+  }
+
+  .product{
+    width: 18vw;
+    flex-direction: column;
+  }
+}

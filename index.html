@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Product Design</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container">
+		<nav class="nav">
+			<div class="logo">
+				<a href="../../index.html"><img src="logo.png" alt="Octabit-Studios"></a>
+				<h1>Octabit Studios</h1>
+				
+			</div>
+			<ul class="nav-links">
+				<a href="javascript:void(0);" class="icon">
+	    			<i class="fa fa-bars"></i>
+	  			</a>
+				<div class="menu">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Contact</a></li>
+				</div>
+			</ul>
+		</nav>
+		<section>
+			<div class="row" id="root">
+			</div>
+		</section>
+	</div>
+
+
+	<div class="modal" id="modal">
+	</div>
+
+	<script type="text/javascript" src="products.json"></script>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="module">
+
+		const modal = document.querySelector(".modal")
+		const trigger = document.querySelector(".trigger")
+		const closeButton = document.querySelector(".close-button")
+		const prow = document.getElementById("root")
+		const data = await fetch('./products.json').then(r=>r.json())
+		function toggleModal(id) {
+		    const product = data.find(i => i.id === id)
+		    modal.innerHTML = `
+		      <div class="modal-content">
+		        <span class="close-button" onclick="modal.classList.toggle('show-modal')">×</span>
+		        <div class="modal_container">
+		          <div class="product_image">
+		            <img src="${product.image}">
+		          </div>
+		          <div class="product_details">
+		            <h1 class="title">${product.title}</h1>
+		            <p class="pro_desc">${product.desc}</p>
+		            <p class="sub_price">Price: <em>$${product.price}</em> / ${product.amount}</p>
+		            <button>Buy Now</button>
+		            <button>Add to Cart <i class="fa fa-shopping-cart"></i></button>
+		          </div>
+		        </div>
+		      </div>
+		    `
+		    modal.classList.toggle("show-modal")
+		}
+		
+		for(let product of data){
+		    const divRoot = document.createElement('div')
+		    divRoot.classList.add("col-3")
+		    prow.appendChild(divRoot)
+		    const divProduct = document.createElement('div')
+		    divProduct.classList.add("product")
+		    divRoot.appendChild(divProduct)
+		    const img = document.createElement('img')
+		    img.src = product.image
+		    img.alt = ""
+		    divProduct.appendChild(img)
+		    const divDesc = document.createElement('div')
+		    divDesc.classList.add("desc")
+		    divProduct.appendChild(divDesc)
+		    const pDesc = document.createElement('h1')
+		    pDesc.classList.add("title")
+		    pDesc.innerText = product.title
+		    divDesc.appendChild(pDesc)
+		    const subDesc = document.createElement('small')
+		    subDesc.classList.add("sub")
+		    subDesc.innerText = product.price + '$'
+		    divDesc.appendChild(subDesc)
+		    const buttView = document.createElement('button')
+		    buttView.innerText = "View"
+		    buttView.onclick = ()=>toggleModal(product.id)
+		    divProduct.appendChild(buttView)
+		    const buttAdd = document.createElement('button')
+		    buttAdd.innerHTML = 'Add to Cart <i class="fa fa-shopping-cart"></i>'
+		    divProduct.appendChild(buttAdd)
+		    
+	    }
+	</script>
+</body>
+</html>
